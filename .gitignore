@@ -1,0 +1,27 @@
+# Node
+node_modules/
+
+# Compiled output
+main.js
+*.js.map
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor junk
+.vscode/
+.idea/
+
+# Obsidian test vaults
+.obsidian/workspace.json
+.obsidian/cache
+.obsidian/plugins
+
+# TypeScript
+*.tsbuildinfo
