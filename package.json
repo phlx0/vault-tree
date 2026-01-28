@@ -1,0 +1,12 @@
+{
+  "name": "vault-tree",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "devDependencies": {
+    "obsidian": "latest",
+    "typescript": "^5.0.0"
+  }
+}
