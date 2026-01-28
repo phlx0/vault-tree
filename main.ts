@@ -185,11 +185,7 @@ export default class VaultTreePlugin extends Plugin {
       md += `## Files\n`;
 
       for (const file of files) {
-        if (file.extension === "md") {
-          md += `- [[${file.basename}]]\n`;
-        } else {
-          md += `- [${file.name}](${file.name})\n`;
-        }
+        md += `- [[${file.path}]]\n`;
       }
 
       md += `\n`;
