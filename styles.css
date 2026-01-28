@@ -1,0 +1,19 @@
+.vault-tree ul {
+  list-style: none;
+  padding-left: 14px;
+  margin: 2px 0;
+}
+
+.vault-tree li {
+  margin: 2px 0;
+}
+
+.vault-tree-folder {
+  font-weight: 600;
+  cursor: default;
+}
+
+.vault-tree-file {
+  cursor: pointer;
+  color: var(--text-accent);
+}
