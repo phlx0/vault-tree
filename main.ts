@@ -74,7 +74,6 @@ class VaultTreeView extends ItemView {
   renderTree(node: any, container: HTMLElement) {
     const ul = container.createEl("ul");
 
-    // folders first, then files
     const keys = Object.keys(node).sort((a, b) => {
       const aIsFile = node[a].__file instanceof TFile;
       const bIsFile = node[b].__file instanceof TFile;
@@ -154,11 +153,7 @@ export default class VaultTreePlugin extends Plugin {
     const subfolders: TFolder[] = [];
 
     for (const child of folder.children) {
-      if (
-        child instanceof TFile &&
-        child.extension === "md" &&
-        child.name !== "table-of-content.md"
-      ) {
+      if (child instanceof TFile && child.name !== "table-of-content.md") {
         files.push(child);
       } else if (child instanceof TFolder) {
         subfolders.push(child);
@@ -188,9 +183,11 @@ export default class VaultTreePlugin extends Plugin {
 
     if (files.length) {
       md += `## Files\n`;
+
       for (const file of files) {
-        md += `- [[${file.basename}]]\n`;
+        md += `- [[${file.path}]]\n`;
       }
+
       md += `\n`;
     }
 
