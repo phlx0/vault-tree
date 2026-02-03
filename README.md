@@ -4,7 +4,7 @@
 
 It turns your folder structure into a navigable knowledge index.
 
----
+## ![alt text](docs/assets/img/showcase.png)
 
 ## ✨ Features
 
