@@ -123,14 +123,12 @@ export default class VaultTreePlugin extends Plugin {
     const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_VAULT_TREE);
 
     if (leaves.length > 0) {
-      // If already open → close it (toggle behavior)
       for (const leaf of leaves) {
         leaf.detach();
       }
       return;
     }
 
-    // Otherwise open it
     const leaf = this.app.workspace.getRightLeaf(true);
     await leaf.setViewState({
       type: VIEW_TYPE_VAULT_TREE,
