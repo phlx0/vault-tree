@@ -57,7 +57,7 @@ class VaultTreeView extends ItemView {
   }
 
   async onOpen() {
-    this.containerEl.addClass("vault-tree");
+    this.contentEl.addClass("vault-tree");
     this.build();
   }
 
@@ -65,10 +65,10 @@ class VaultTreeView extends ItemView {
     const files = this.app.vault.getAllLoadedFiles();
     this.tree = buildTree(files);
 
-    this.containerEl.empty();
-    this.containerEl.addClass("vault-tree");
+    this.contentEl.empty();
+    this.contentEl.addClass("vault-tree");
 
-    this.renderTree(this.tree, this.containerEl);
+    this.renderTree(this.tree, this.contentEl);
   }
 
   renderTree(node: any, container: HTMLElement) {
@@ -120,11 +120,16 @@ export default class VaultTreePlugin extends Plugin {
   }
 
   async activateView() {
-    const existingLeaf = this.app.workspace.getRightLeaf(false);
-    const leaf = existingLeaf ?? this.app.workspace.getRightLeaf(true);
+    const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_VAULT_TREE);
 
-    if (!leaf) return;
+    if (leaves.length > 0) {
+      for (const leaf of leaves) {
+        leaf.detach();
+      }
+      return;
+    }
 
+    const leaf = this.app.workspace.getRightLeaf(true);
     await leaf.setViewState({
       type: VIEW_TYPE_VAULT_TREE,
       active: true,
