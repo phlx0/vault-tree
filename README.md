@@ -1,92 +1,90 @@
-# 🌲 Vault Tree — Obsidian Plugin
+# 🌲 Vault Tree — Structural Navigation for Obsidian
 
-**Vault Tree** gives you a structural overview of your entire vault and can generate a recursive set of `table-of-content.md` files for every folder.
+**Vault Tree** turns your folder hierarchy into a living, navigable knowledge map.
 
-It turns your folder structure into a navigable knowledge index.
+It gives you:
 
-## ![alt text](docs/assets/img/showcase.png)
+* A **true tree view** of your entire vault
+* A **recursive system of Table-of-Contents notes** that link everything together
+* A way to use Obsidian’s **Graph View to visualize structure**, not just links
 
-## ✨ Features
-
-### 🌳 Vault Tree View
-
-- Side panel that shows the **entire vault as a tree**
-- Click any file to open it
-- Folders are shown before files
-- Updates live when files/folders change
-
-### 📄 Recursive Table of Contents Generator
-
-- Creates a `table-of-content.md` inside **every folder**
-- Each TOC lists:
-  - All notes in that folder
-  - Links to the TOCs of all child folders
-
-- Forms a **self-linking structural map** of your vault
+> Your folders stop being storage. They become part of your knowledge graph.
 
 ---
 
-## 🧠 Why this is useful
+## 🖼️ Overview
 
-Large vaults become hard to navigate by folders alone.
-
-Vault Tree lets you:
-
-- See the whole structure at once
-- Navigate via generated TOCs
-- Use graph view on TOCs to visualize structure
-- Publish or share a vault with clear hierarchy
-- Treat folders as knowledge nodes, not just storage
+![Vault Tree Showcase](docs/assets/img/showcase.png)
 
 ---
 
-## 🖱 Usage
+## ✨ What Vault Tree Does
 
-After enabling the plugin, you get two ribbon icons:
+### 🌳 1) Vault-Wide Tree Panel
 
-| Icon    | Action                                              |
-| ------- | --------------------------------------------------- |
-| 🌳 Tree | Open the Vault Tree panel                           |
-| ➕ File | Generate `table-of-content.md` files in all folders |
+A dedicated side panel that shows your **entire vault structure** as a clean tree:
 
-Run the TOC generator once, and your vault becomes self-indexing.
+* Folders always listed before files
+* Click any note to open it
+* Updates automatically when the vault changes
+* Much clearer structural overview than the default file explorer for large vaults
 
----
-
-## 📦 Installation (development)
-
-Clone this repo into your vault:
-
-```
-<your-vault>/.obsidian/plugins/vault-tree
-```
-
-Then:
-
-```bash
-npm install
-npm run build
-```
-
-Enable **Vault Tree** in Obsidian → Community Plugins.
+This is your **structural map** of the vault.
 
 ---
 
-## 🛠 Development
+### 📄 2) Recursive Table-of-Contents Generator
 
-Run TypeScript in watch mode:
+With one click, Vault Tree generates a `table-of-content.md` file **inside every folder**.
 
-```bash
-npm run dev
-```
+Each TOC contains:
 
-After changes, reload plugins inside Obsidian.
+* Links to **all notes in that folder**
+* Links to the **TOCs of all child folders**
+
+This creates a **self-linking hierarchy** across your entire vault.
+
+You can now:
+
+* Navigate your vault through TOCs
+* Use Graph View to see folder relationships
+* Publish your vault with built-in structure
+* Treat folders as first-class knowledge nodes
 
 ---
 
-## 📁 Generated TOC Structure Example
+## 🧠 Why This Is Powerful
 
-If your vault looks like:
+As vaults grow, folders alone stop being useful for navigation.
+
+Vault Tree fixes this by turning your structure into something you can:
+
+* See
+* Click through
+* Visualize
+* Traverse like a knowledge map
+
+You don’t browse files anymore.
+You **navigate structure**.
+
+---
+
+## 🖱 How to Use
+
+After enabling the plugin, you’ll see two ribbon icons:
+
+| Icon | Action                                                |
+| ---- | ----------------------------------------------------- |
+| 🌳   | Open the Vault Tree panel                             |
+| ➕    | Generate `table-of-content.md` files across the vault |
+
+**Run the TOC generator once** and your vault becomes permanently self-indexing.
+
+---
+
+## 📁 Example
+
+If your vault looks like this:
 
 ```
 Projects/
@@ -96,7 +94,7 @@ Projects/
     Paper.md
 ```
 
-Vault Tree creates:
+Vault Tree generates:
 
 **Projects/table-of-content.md**
 
@@ -104,12 +102,10 @@ Vault Tree creates:
 # Projects
 
 ## Files
-
 - [[Alpha]]
 - [[Beta]]
 
 ## Subfolders
-
 - [[Projects/Research/table-of-content]]
 ```
 
@@ -119,30 +115,68 @@ Vault Tree creates:
 # Research
 
 ## Files
-
 - [[Paper]]
 ```
+
+These TOCs then link to each other — forming a structural graph.
+
+---
+
+## 🛠 Installation (Development)
+
+Clone into your vault’s plugins folder:
+
+```
+<your-vault>/.obsidian/plugins/vault-tree
+```
+
+Install dependencies and build:
+
+```bash
+npm install
+npm run build
+```
+
+Then enable **Vault Tree** in:
+
+> Obsidian → Settings → Community Plugins
+
+---
+
+## 💻 Development
+
+Run TypeScript in watch mode:
+
+```bash
+npm run dev
+```
+
+Reload plugins inside Obsidian after changes.
 
 ---
 
 ## 🚀 Roadmap
 
-- Collapsible folders in the tree
-- Highlight current file
-- Icons matching Obsidian File Explorer
-- Auto-regenerate TOCs on change
-- Sorting options
+Planned improvements:
+
+* Collapsible folders in the tree
+* Highlight the currently open file
+* Match Obsidian File Explorer icons
+* Auto-regenerate TOCs when files change
+* Sorting and filtering options
 
 ---
 
 ## 🧩 License
 
-This plugin is licensed under **CC BY-NC-SA 4.0**.
-You are free to use and modify it, but you may not sell it or use it commercially.
-Attribution to the original author is required.
+Licensed under **CC BY-NC-SA 4.0**.
+
+You may use and modify this plugin, but not sell or use it commercially. Attribution is required.
 
 ---
 
 ## 🙌 Contributing
 
-Issues and PRs welcome.
+Issues, ideas, and pull requests are welcome.
+
+If you like the concept, help make it even better.
